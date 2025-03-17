@@ -81,6 +81,29 @@ fun AddNoteScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
+//        AsyncImage(
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .height(200.dp)
+//                .padding(horizontal = 16.dp)
+//                .clip(RoundedCornerShape(16.dp))
+//                .background(MaterialTheme.colorScheme.primaryContainer)
+//                .clickable {
+//                    addNoteViewModel.onAction(
+//                        AddNoteActions.UpdateImagesDialogVisibility
+//                    )
+//                }
+//                .testTag(
+//                    TestTags.NOTE_IMAGE
+//                ),
+//            model = ImageRequest
+//                .Builder(LocalContext.current)
+//                .data(addNoteState.imageUrl)
+//                .size(Size.ORIGINAL)
+//                .build(),
+//            contentDescription = addNoteState.searchImagesQuery,
+//            contentScale = ContentScale.Crop
+//        )
         AsyncImage(
             modifier = Modifier
                 .fillMaxWidth()
@@ -93,9 +116,7 @@ fun AddNoteScreen(
                         AddNoteActions.UpdateImagesDialogVisibility
                     )
                 }
-                .testTag(
-                    TestTags.NOTE_IMAGE
-                ),
+                .testTag(TestTags.NOTE_IMAGE + addNoteState.imageUrl),
             model = ImageRequest
                 .Builder(LocalContext.current)
                 .data(addNoteState.imageUrl)
